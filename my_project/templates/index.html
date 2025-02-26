@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-body">
+        <h2 class="card-title">What would you like to know?</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+                {{ form.text_field }}
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        {% if submitted_text %}
+            <div class="alert alert-success mt-3">
+                <p class="mb-0">You submitted: {{ submitted_text }}</p>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
