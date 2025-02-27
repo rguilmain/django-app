@@ -1,5 +1,9 @@
 # Django Application
 
+[![CI](https://github.com/rguilmain/django-app/actions/workflows/ci.yml/badge.svg)](https://github.com/rguilmain/django-app/actions/workflows/ci.yml)
+
+Cookie cutter Django project.
+
 ## Setup
 
 1. Clone the repository
