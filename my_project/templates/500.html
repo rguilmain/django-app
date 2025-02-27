@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Server Error{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-body text-center">
+        <h1 class="display-1">500</h1>
+        <p class="lead">Internal Server Error</p>
+        <p class="text-muted mb-4">Something went wrong on our end. Our technical team has been notified of the issue.</p>
+        <p class="text-muted">Please try again later or contact support if the problem persists.</p>
+        <a href="/" class="btn btn-primary">Go Home</a>
+    </div>
+</div>
+{% endblock %}

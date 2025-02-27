@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Bad Request{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-body text-center">
+        <h1 class="display-1">400</h1>
+        <p class="lead">Bad Request</p>
+        <p class="text-muted mb-4">The server could not understand your request. It might be malformed or missing required parameters.</p>
+        <a href="/" class="btn btn-primary">Go Home</a>
+    </div>
+</div>
+{% endblock %}

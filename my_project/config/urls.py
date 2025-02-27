@@ -17,3 +17,12 @@ if settings.DEBUG:
 
     # Serve media files in development
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+    # For testing error pages in development
+    from django.views.generic import TemplateView
+    urlpatterns += [
+        path('400/', TemplateView.as_view(template_name='400.html')),
+        path('403/', TemplateView.as_view(template_name='403.html')),
+        path('404/', TemplateView.as_view(template_name='404.html')),
+        path('500/', TemplateView.as_view(template_name='500.html')),
+    ]
