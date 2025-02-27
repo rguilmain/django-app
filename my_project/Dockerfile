@@ -19,15 +19,18 @@ COPY requirements/base.txt requirements/base.txt
 COPY requirements/dev.txt requirements/dev.txt
 RUN pip install -r requirements/dev.txt
 
+# Copy project files
+COPY . .
+
 # Create staticfiles directory
 RUN mkdir -p staticfiles
 
-# Copy project files
-COPY . .
+# Make entrypoint script executable
+RUN chmod +x entrypoint.sh
 
 # Set up non-root user
 RUN useradd -m appuser
 USER appuser
 
-# Run gunicorn for production
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# Run entrypoint script
+CMD ["./entrypoint.sh"]
